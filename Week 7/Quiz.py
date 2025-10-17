@@ -83,8 +83,8 @@ print(get_names(mydiction))
 '''
 def find_oldest(people):
   oldest_name = ''
-  oldest_age = 0
-  for name,age in people.items():  #.items（）for key & value
+  oldest_age = float('-inf')
+  for name,age in people.items():  #.items() for key & value
     if age > oldest_age:
       oldest_age = age
       oldest_name = name
@@ -115,33 +115,31 @@ print(letter_count(word))
 
 
 
-#7
+#7 positive infinity
 '''
-def min_grade(course):
+def min_grade(exams):
   lowest_course = ''
-  lowest_grade = 1000
-  for course,grade in course.items():
+  lowest_grade = float('inf')    # Set to positive infinity
+  for course,grade in exams.items():
     if grade < lowest_grade:
-      lowest_grade = grade 
+      lowest_grade = grade
       lowest_course = course
   return lowest_course
 
-course = {'a':1,'b':2,'c':3}
-print(min_grade(course))
+exams = {'a':1,'b':2,'c':3}
+print(min_grade(exams))
 '''
 
 
 
 
-#8
+#8 positive infinity
 '''
 def find_youngest(people):
   you_name = ''
-  you_age = None
+  you_age = float('inf')    # Set to positive infinity
   for name,age in people.items():
-    if you_age is None:
-      you_age = age
-    elif age < you_age:
+    if age < you_age:
       you_age = age
       you_name = name
   return you_name
@@ -246,7 +244,7 @@ print(total_sales(sales))
 def high_earners(employees,salary):
   high_earners_list = []
   for x in employees:
-    if employees[x] > salary:    #=
+    if employees[x] > salary:    
       high_earners_list.append(x)
   return high_earners_list
 
@@ -292,7 +290,7 @@ print(total_calories(fruit))
 #17
 '''
 def total_cost(goods):
-  prices = {'flour':2.50,'sugar':1.80,'eggs':3.00,'butter':2.75,'vanlia':4.50,'chocolate':5.00}
+  prices = {'flour':2.50,'sugar':1.80,'eggs':3.00,'butter':2.75,'vanllia':4.50,'chocolate':5.00}
   count = 0
   for x in goods:
     count += prices[x]
