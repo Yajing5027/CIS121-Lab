@@ -5,7 +5,6 @@ def toss_coin(guess = 0):
   value = randint(0,1)
   return "Correct!" if value == guess else "Incorrect!"
 
-guess = input('Enter your guess: ')
 print(toss_coin())
 '''
 
@@ -21,7 +20,6 @@ def guess_oe(guess = 'even'):
   value = 'odd' if value %2 ==1 else 'even'
   return "Correct!" if value == guess else "Incorrect!"
 
-guess = input('Enter your : ')
 print(guess_oe())
 '''
 
@@ -39,7 +37,7 @@ def count_duplicates(num_1=0,num_2=0,num_3=0):
   else:
     return "Each number is unique"
 
-print(count_duplicates(0))
+print(count_duplicates())
 '''
 
 
@@ -80,7 +78,6 @@ print(find_relation(name)) if name else print(find_relation())
 # 6
 '''
 def hailstone_seq(n=40):
-  n = int(n)
   result = [n]
 
   while n != 1:
@@ -88,7 +85,6 @@ def hailstone_seq(n=40):
       result.append(n)
   return result
 
-n = input('Enter your number: ')
 print(hailstone_seq())
 '''
 
@@ -115,11 +111,6 @@ print(ascending_order(50))
 # 8
 '''
 def ascending_order(num_1,num_2=15,num_3=5):
-  if not num_2:
-    num_2 = 5
-  if not num_3:
-    num_3 = 25
-
   if num_1 > num_2:
     num_1,num_2 = num_2,num_1
   if num_1 > num_3:
@@ -128,10 +119,7 @@ def ascending_order(num_1,num_2=15,num_3=5):
     num_2,num_3 = num_3,num_2
   return [num_1,num_2,num_3]
 
-num_1 = int(input('Enter your number: '))
-num_2 = int(input('Enter your number: '))
-num_3 = int(input('Enter your number: '))
-print(ascending_order(num_1,num_2,num_3))
+print(ascending_order(0))
 '''
 
 
@@ -147,7 +135,6 @@ def get_indices(mylist,value = 0):
   return squence
 
 mylist = [1,0,5,0,7]
-value = input('Enter your value: ')
 print(get_indices(mylist))
 '''
 
@@ -177,7 +164,7 @@ def list_of_multiples(num,length = 5):
     result.append(num*x)
   return result
 
-print(list_of_multiples(2))
+print(list_of_multiples(7,2))
 '''
 
 
@@ -194,7 +181,7 @@ def report_evens(numlist):
     if is_even(x):
       result.append(x)
   return result
-  
+
 numlist = [4,3,12,16,8,9,25]
 
 print(report_evens(numlist))
@@ -206,7 +193,7 @@ print(report_evens(numlist))
 # 13
 '''
 def is_vowel(x):
-  return True if x in ['a','e','i','o','u'] else False
+  return x in ['a','e','i','o','u']
 
 def report_evens(word):
   result = []
@@ -225,7 +212,7 @@ print(report_evens(word))
 # 14
 '''
 def is_two_digit_numbers(x):
-  return True if x in range(-99,-10+1) or x in range(10,99+1) else False
+  return x in range(-99,-10+1) or x in range(10,99+1)
   # notice end+1
 
 def report_two_digit_numbers(numlist):
@@ -245,10 +232,10 @@ print(report_two_digit_numbers(numlist))
 # 15
 '''
 def is_negative(x):
-  return True if x < 0 else False
+  return x < 0
 
 def is_odd(x):
-  return True if x%2 == 1 else False
+  return x%2 == 1
 
 def report_negative_odds(mylist):
   result = []
