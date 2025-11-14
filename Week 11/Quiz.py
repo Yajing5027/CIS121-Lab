@@ -113,9 +113,6 @@ class Lion:
     def set_name(self, new_name):
         self.name = new_name
 
-    def get_gender(self):       # add get_gender method for class zoo
-        return self.gender
-
     def roar(self):
         print('Roar')       # print
     
@@ -138,7 +135,7 @@ class Zoo:
         male = 0
         female = 0
         for lion in self.lions:
-            if lion.get_gender() == 'male':
+            if lion.gender == 'male':
                 male += 1
             else:
                 female +=1
