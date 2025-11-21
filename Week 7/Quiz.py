@@ -84,7 +84,7 @@ print(get_names(mydiction))
 def find_oldest(people):
   oldest_name = ''
   oldest_age = float('-inf')
-  for name,age in people.items():  #.items() for key & value
+  for name,age in people.items():  #''for key,value in dic.items()'' control key & value
     if age > oldest_age:
       oldest_age = age
       oldest_name = name
