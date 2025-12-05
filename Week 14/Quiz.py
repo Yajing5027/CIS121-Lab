@@ -53,7 +53,6 @@ while True:
 
 
 
-
 #4
 '''
 while True:
@@ -175,7 +174,7 @@ while True:
     try:
         prize = input("Enter prize amount:")
         num = input("Enter number of winners:")
-        prize1 = int(prize)
+        prize1 = float(prize)
         num1 = int(num)
         print(prize1 / num1)
         break
