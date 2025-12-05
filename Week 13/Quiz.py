@@ -43,7 +43,6 @@ with open("MyName.txt",'r') as f:
 
 
 
-
 #4
 '''
 with open('MyWords.txt','r') as mwf:
@@ -54,6 +53,9 @@ with open('New.txt', 'w') as nf:
         line = ' '.join(line_word)
         nf.write(line + '\n')
 '''
+
+
+
 
 #5 Extract specific content from each line - Method 1: read file into list of lines, then split each line into list of strings, take index[1]
 '''
@@ -71,7 +73,7 @@ with open('LunchData.txt','r') as f:
 '''
 total = 0
 with open('LunchData.txt','r') as f:
-    data = f.read().split()
+    data = f.read().strip().split()
     for x in data[1::2]:        # every other one
         total += int(x)       
 
@@ -176,7 +178,10 @@ with open('PagesRead.csv','r') as f:
     lines = f.readlines()[1:]
     for x in lines:
         data = x.strip().split(',')         # CSV format separated by ',', strip to handle whitespace
-        club[data[0]] = int(data[1]) + int(data[2])
+        if data[0] in club:
+            club[data[0]] += int(data[1]) + int(data[2])
+        else:
+            club[data[0]] = int(data[1]) + int(data[2])
 print(club)
 '''
 
@@ -185,8 +190,7 @@ print(club)
 
 
 
-
-#11 store in dictionary
+#11 
 '''
 user = {}
 with open('SongPlays.txt','r') as f:
